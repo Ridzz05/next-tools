@@ -8,7 +8,6 @@ import {
   Button,
   Spinner,
   Image,
-  Tooltip,
   Divider
 } from "@nextui-org/react"
 import { SearchIcon, ImageIcon, CloseIcon } from '../components/icons/StickerIcons'

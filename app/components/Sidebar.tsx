@@ -1,14 +1,11 @@
 'use client'
 
 import { Button } from "@nextui-org/react"
-import { useEffect, lazy, Suspense } from "react"
-import { SunIcon, MoonIcon } from "./chat/Icons"
-import { useTheme } from "next-themes"
+import { useEffect, Suspense } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import {
   YoutubeIcon,
   AIChatIcon,
-  WeatherIcon,
   SymbolIcon,
   TranslateIcon,
   StickerIcon,
@@ -27,7 +24,6 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const { theme, setTheme } = useTheme()
   const router = useRouter()
   const pathname = usePathname()
 
@@ -132,25 +128,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   <YoutubeIcon />
                 </Suspense>
                 <span>Download Video Youtube</span>
-              </Button>
-
-              {/* Tambahkan Weather button di Tools Section */}
-              <Button
-                variant="flat"
-                className={`w-full justify-start gap-2 ${
-                  pathname === '/weather'
-                    ? 'bg-success-500/20 hover:bg-success-500/30 text-success'
-                    : 'bg-default-100 hover:bg-default-200'
-                }`}
-                onClick={() => {
-                  router.push('/weather')
-                  onClose()
-                }}
-              >
-                <Suspense fallback={<IconLoadingFallback />}>
-                  <WeatherIcon />
-                </Suspense>
-                <span>Cuaca</span>
               </Button>
 
               {/* Di dalam Tools Section, tambahkan button Symbols sebelum Weather button */}

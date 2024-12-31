@@ -6,8 +6,7 @@ import {
   CardBody,
   Button,
   Spinner,
-  Tooltip,
-  Divider
+  Tooltip
 } from "@nextui-org/react"
 import { SymbolIcon, CopyIcon, CheckIcon } from '../components/icons/SymbolIcons'
 
